@@ -1,0 +1,82 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DocuSense & Market Intel</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Outfit:wght@100;300;400;600;900&display=swap');
+    
+    :root {
+      --bg-deep: #020617;
+      --accent-primary: #6366f1;
+      --accent-secondary: #f43f5e;
+      --neon-glow: rgba(99, 102, 241, 0.4);
+    }
+
+    body { 
+      font-family: 'Outfit', sans-serif; 
+      background-color: var(--bg-deep);
+      background-image: 
+        radial-gradient(at 0% 0%, rgba(30, 41, 59, 0.5) 0, transparent 50%),
+        radial-gradient(at 100% 100%, rgba(88, 28, 135, 0.2) 0, transparent 50%);
+      color: #f8fafc;
+      overflow-x: hidden;
+    }
+
+    .antigravity-glass {
+      background: rgba(15, 23, 42, 0.6);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
+    }
+
+    .neon-border {
+      position: relative;
+    }
+    
+    .neon-border::after {
+      content: '';
+      position: absolute;
+      inset: -1px;
+      background: linear-gradient(45deg, var(--accent-primary), transparent, var(--accent-secondary));
+      border-radius: inherit;
+      z-index: -1;
+      opacity: 0.3;
+    }
+
+    .float-anim {
+      animation: float 6s ease-in-out infinite;
+    }
+
+    @keyframes float {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-10px); }
+    }
+
+    .stock-up { color: #10b981; text-shadow: 0 0 10px rgba(16, 185, 129, 0.4); }
+    .stock-down { color: #ef4444; text-shadow: 0 0 10px rgba(239, 68, 68, 0.4); }
+
+    h1, h2, h3 { font-family: 'Space Grotesk', sans-serif; }
+  </style>
+<script type="importmap">
+{
+  "imports": {
+    "react/": "https://esm.sh/react@^19.2.4/",
+    "react": "https://esm.sh/react@^19.2.4",
+    "react-dom/": "https://esm.sh/react-dom@^19.2.4/",
+    "@google/genai": "https://esm.sh/@google/genai@^1.40.0"
+  }
+}
+</script>
+<link rel="stylesheet" href="/index.css">
+</head>
+<body class="min-h-screen selection:bg-indigo-500/30">
+  <div id="root"></div>
+<script type="module" src="/index.tsx"></script>
+</body>
+</html>
